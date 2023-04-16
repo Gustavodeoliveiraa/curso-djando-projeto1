@@ -1,5 +1,3 @@
-from unittest import skip
-
 from django.urls import resolve, reverse
 
 from recipes import views
@@ -19,7 +17,6 @@ class RecipeViewsTest(RecipeTestCase):
     def test_recipe_home_view_loads_correct_template(self):
         response = self.client.get(reverse('recipes:home'))
         self.assertTemplateUsed(response, 'recipes/pages/home.html')
-
 
     def test_recipe_home_template_show_no_recipe_founds_if_no_recipes(self):
         response = self.client.get(reverse('recipes:home'))
